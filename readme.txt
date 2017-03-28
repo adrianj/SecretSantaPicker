@@ -1,0 +1,1 @@
+A simple Windows Mobile app to help randomise our family’s secret santa picks without duplicating last year’s.
