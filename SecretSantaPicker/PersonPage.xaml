@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="SecretSantaPicker.PersonPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SecretSantaPicker"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="360" Height="640" KeyDown="Page_KeyDown">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <Button x:Name="addExcButton" Content="Add Exclusion" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="120" Height="50" Click="addExcButton_Click"/>
+        <Button x:Name="showButton" Content="Show!" HorizontalAlignment="Left" Margin="230,0,0,10" VerticalAlignment="Bottom" Width="120" Height="50" Click="showButton_Click"/>
+        <ListView x:Name="listView" Margin="4,8,4,80" BorderThickness="2" Header="Player1" FontSize="20" RightTapped="listView_RightTapped" Holding="listView_Holding">
+            <ListView.Resources>
+                <MenuFlyout x:Name="menuFlyoutContext" x:Key="FlyoutBase1">
+                    <MenuFlyoutItem Text="Delete" Click="MenuFlyoutItem_Click"/>
+                </MenuFlyout>
+            </ListView.Resources>
+            <FlyoutBase.AttachedFlyout>
+                <StaticResource ResourceKey="FlyoutBase1"/>
+            </FlyoutBase.AttachedFlyout>
+        </ListView>
+
+    </Grid>
+</Page>
